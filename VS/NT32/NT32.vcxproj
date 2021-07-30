@@ -36,17 +36,20 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <NMakeOutput>NT32.exe</NMakeOutput>
     <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
-    <NMakeBuildCommandLine>set NASM_PREFIX=C:\FW\NASM\
-call c:\FW\edk2\edksetup.bat --nt32
+    <NMakeBuildCommandLine>set NASM_PREFIX=$(SolutionDir)\..\NASM\
+set PYTHON_HOME=$(SolutionDir)\..\Python35\
+call $(SolutionDir)\..\edk2\edksetup.bat Rebuild VS2019
 build
 </NMakeBuildCommandLine>
-    <NMakeReBuildCommandLine>set NASM_PREFIX=C:\FW\NASM\
-call c:\FW\edk2\edksetup.bat --nt32 
+    <NMakeReBuildCommandLine>set NASM_PREFIX=$(SolutionDir)\..\NASM\
+set PYTHON_HOME=$(SolutionDir)\..\Python35\
+call $(SolutionDir)\..\edk2\edksetup.bat Rebuild VS2019
 build clean
 build
 </NMakeReBuildCommandLine>
-    <NMakeCleanCommandLine>set NASM_PREFIX=C:\FW\NASM\
-call  c:\FW\edk2\edksetup.bat --nt32 
+    <NMakeCleanCommandLine>set NASM_PREFIX=$(SolutionDir)\..\NASM\
+set PYTHON_HOME=$(SolutionDir)\..\Python35\
+call $(SolutionDir)\..\edk2\edksetup.bat Rebuild VS2019
 build clean
 </NMakeCleanCommandLine>
   </PropertyGroup>
